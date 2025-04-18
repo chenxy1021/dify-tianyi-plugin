@@ -1,12 +1,3 @@
-from dashscope.common.error import (
-    AuthenticationError,
-    InvalidParameter,
-    RequestFailure,
-    ServiceUnavailableError,
-    UnsupportedHTTPMethod,
-    UnsupportedModel,
-)
-
 from dify_plugin.errors.model import (
     InvokeAuthorizationError,
     InvokeBadRequestError,
@@ -47,18 +38,16 @@ class _CommonTianYi:
         """
         return {
             InvokeConnectionError: [
-                RequestFailure,
+                InvokeConnectionError,
             ],
             InvokeServerUnavailableError: [
-                ServiceUnavailableError,
+                InvokeServerUnavailableError,
             ],
-            InvokeRateLimitError: [],
+            InvokeRateLimitError: [InvokeRateLimitError],
             InvokeAuthorizationError: [
-                AuthenticationError,
+                InvokeAuthorizationError,
             ],
             InvokeBadRequestError: [
-                InvalidParameter,
-                UnsupportedModel,
-                UnsupportedHTTPMethod,
+                InvokeBadRequestError
             ],
         }
