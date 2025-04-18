@@ -43,7 +43,7 @@ parameter_rules:
     min: 1
     max: 100
     help:
-      zh_Hans: 	超参：top_k 采样。预置大模型取值范围 [1, 100]。默认值为20。取值越大，生成的随机性越高；取值越小，生成的确定性越高。
+      zh_Hans: 超参：top_k 采样。预置大模型取值范围 [1, 100]。默认值为20。取值越大，生成的随机性越高；取值越小，生成的确定性越高。
       en_US: Control the randomness of generated results. The smaller the value, the weaker the randomness; the larger the value, the stronger the randomness. Generally speaking, you can adjust one of the two parameters top_p and temperature.
   - name: presence_penalty
     use_template: presence_penalty
